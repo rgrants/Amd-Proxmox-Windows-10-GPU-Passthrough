@@ -125,3 +125,8 @@ Make sure you can remote in before passing GPU since console won't work any more
 ``` bash 
 hostpci0: 08:00.0,x-vga=on,pcie=1,romfile=GP106Patched.rom
 ```
+In case of pcie errors afer proxmox 7.2.5 replace
+``` bash video=efifb:off```  
+with 
+``` bash initcall_blacklist=sysfb_init ```  
+in /etc/default/grub
